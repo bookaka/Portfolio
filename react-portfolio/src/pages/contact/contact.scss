@@ -1,0 +1,70 @@
+@use '../../App.scss' as *;
+.container{
+   @include tablet{
+      flex-direction: column;
+   }
+   .infoP{
+      @include tablet{
+         width: 100%;
+         margin-bottom: 50px;
+      }
+      h1{
+         font-size: 26px;
+         margin-bottom: 16px;
+         text-transform: uppercase;
+      }
+      h2{
+         font-size: 15px;
+         margin-bottom: 24px !important;
+         font-weight: normal;
+      }
+      .contact-info-list{
+         li{
+            font-weight: 600;
+            line-height: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            .icon{
+               font-size: 36px;
+               margin-right: 12px;
+               color: var(--main-color);
+            }
+            .text{
+               font-weight: 600;
+               p{
+                  text-transform: uppercase;
+                  font-size: 16px;
+                  color: var(--txt-color);
+                  font-weight: 400;
+                  opacity: .8;
+               }
+            }
+         }
+      }
+      .contact-social-list{
+         display: flex;
+         
+         li{
+           
+            
+            font-size: 30px;
+            margin-right: 10px;
+            a{
+               @include flex(center,center);
+               height: 40px;
+               width: 40px;
+               border-radius: 50%;
+               background-color: var(--nav-bg-color);
+               align-items: center;
+               transition: all .3s ease;
+            }
+         }
+      }
+   }
+   .form{
+      @include tablet{
+         width: 100%;
+      }
+   }
+}
+
