@@ -48,7 +48,8 @@ const projects =[
     title: 'My Portfolio',
     thumUrl: Portfolio,
     des:'Build a personal website to showcase my professional profile, skills, and the projects I have worked on.',
-    demo: '',
+    demo: 'https://trandinh-portfolio.netlify.app/',
+    git:'https://github.com/bookaka/Portfolio',
     fe:'HTML, SCSS, React',
     be:'Do not use',
     
