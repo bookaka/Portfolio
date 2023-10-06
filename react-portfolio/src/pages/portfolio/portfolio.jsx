@@ -1,7 +1,7 @@
 import React from 'react'
 import './portfolio.scss'
 import HeaderPage from '../../components/Header-page/HeaderPage'
-import { music, Portfolio, SetSail,movie,Oldie } from '../../assets/portfolio/portfolio.js'
+import { music, Portfolio, SetSail,movie,Oldie,ShopEcommerce } from '../../assets/portfolio/portfolio.js'
 
 const projects =[
   {
@@ -52,6 +52,18 @@ const projects =[
     git:'https://github.com/bookaka/Portfolio',
     fe:'HTML, SCSS, React',
     be:'Do not use',
+    
+    
+  },
+  {
+    title: 'Shop Ecommerce',
+    thumUrl: ShopEcommerce,
+    des:'Build a website to sell clothes, where you can post and manage products and orders. Users can access, view and purchase products',
+    demo: 'Comming Soon',
+    git:'https://github.com/bookaka/ShopEcommerce',
+    fe:'Comming Soon',
+    be:'Nodejs, MongoDB, Cloudify, Redis',
+    
     
   },
 ]

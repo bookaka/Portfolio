@@ -18,7 +18,7 @@ function home() {
             <h1>Hello,</h1>
             <h1>My name Tran Quoc Dinh</h1>
             <h2>I am Web Developer</h2>
-            <p>Hello everyone,My name is Tran Quoc Dinh, and I am currently a third-year student at University of Natural Sciences, Ho Chi Minh City, majoring in Information Technology. I have been passionate about computer science since high school, and my goal is to become a web developer.</p>
+            <p>Hello everyone,My name is Tran Quoc Dinh, and I am currently a fourth-year student at University of Natural Sciences, Ho Chi Minh City, majoring in Information Technology. I have been passionate about computer science since high school, and my goal is to become a web developer.</p>
             <p>Thank you for visiting my profile!</p>
             <div className="home__button">
               <Button className = "home__button-btn"> 
