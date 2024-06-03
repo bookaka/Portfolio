@@ -1,0 +1,172 @@
+@use "../../App.scss" as *;
+.projects {
+  .project-item {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    @include tablet {
+      width: 45%;
+      padding: 1rem 1.5rem;
+      margin: 0.5rem;
+      text-align: center;
+    }
+    @include mobile {
+      width: 95%;
+      padding: 0 0;
+    }
+    &-bg {
+      width: 100%;
+      padding-top: 62.5%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    }
+    h3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $white;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+      z-index: 2;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0px;
+      right: 15px;
+      bottom: 0px;
+      left: 15px;
+      background-color: $black;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      z-index: 1;
+      @include mobile {
+        right: 0;
+        left: 0;
+      }
+    }
+    &:hover::after {
+      opacity: 0.5;
+      visibility: visible;
+    }
+    &:hover h3 {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.overlay {
+  @include flex(center, center);
+  min-height: 100vh;
+  padding: 40px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .detail {
+    @include flex(flex-start, space-between);
+    background-color: rgba(37, 37, 37);
+    padding: 30px;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 6px;
+    transform: scale(0.98);
+    @include tablet {
+      flex-direction: column;
+    }
+    &-bg {
+      @include tablet {
+        width: 100%;
+      }
+      &-title {
+        h3 {
+          font-size: 33px;
+          text-transform: uppercase;
+          color: var(--main-color);
+          margin-bottom: 1rem;
+          border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+      }
+      &-img {
+        width: 100%;
+        padding-top: 62.5%;
+        overflow: hidden;
+        border-radius: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    &-desc {
+      @include tablet {
+        width: 100%;
+      }
+      &-title {
+        h3 {
+          font-size: 33px;
+          text-transform: uppercase;
+          color: var(--main-color);
+          margin-bottom: 1rem;
+          border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+      }
+      &-info {
+        p {
+          margin-bottom: 1rem;
+          line-height: 1.5;
+          font-weight: 400;
+          color: $white;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .close-btn {
+    @include flex(center, center);
+    position: absolute;
+    top: -22px;
+    right: -22px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: $box-shadow;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    z-index: 90;
+    i {
+      font-size: 28px;
+      color: var(--main-color);
+      cursor: pointer;
+      z-index: 90;
+    }
+    @include mobile {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

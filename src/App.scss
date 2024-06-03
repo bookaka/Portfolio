@@ -1,0 +1,256 @@
+// Variable
+$body-bg: #111111;
+$main-color: #ffb400;
+$main-light: mix(white, $main-color, 25%);
+$txt-color: #fff;
+$dark-title-bg: hsla(0, 0%, 100%, 0.07);
+$light-title-bg: rgba(30, 37, 48, 0.07);
+$success-color: rgba(76, 175, 80, 1);
+$error-color: rgba(244, 67, 54, 1);
+
+$white: #fff;
+$black: #000;
+
+$box-shadow: 0 0 7px rgb(0 0 0 / 90%);
+$border-radius: 30px;
+
+$mobile-width: 767.98px;
+$tablet-width: 991.98px;
+$laptop-width: 1399.98px;
+
+$font-family: sans-serif;
+$pp-font: "Poppins", sans-serif;
+
+// breakpoints
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: $laptop-width) and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin flex($align-item, $justify-content) {
+  display: flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+}
+@mixin overlay() {
+  background-color: rgba($color: #000000, $alpha: 0.4);
+}
+
+// css app
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+body[data-theme="light"] {
+  --main-color: #72b626;
+  --body-bg: white;
+  --txt-color: #666666;
+  --toggle-color: black;
+  --nav-bg-color: #eeeeee;
+  --cursor-color: 149, 200, 92;
+  --title-bg: #{$light-title-bg};
+  --reverse-color: black;
+}
+body[data-theme="dark"] {
+  --main-color: #ffb400;
+  --body-bg: #111111;
+  --txt-color: white;
+  --toggle-color: #252525;
+  --nav-bg-color: #2b2a2a;
+  --cursor-color: 255, 199, 64;
+  --title-bg: #{$dark-title-bg};
+  --reverse-color: white;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  font-size: 100%;
+  @include laptop {
+    font-size: 0.9375rem;
+  }
+  @include mobile {
+    font-size: 0.875rem;
+  }
+}
+body {
+  font-family: $font-family;
+  font-weight: 400;
+  line-height: 1.5;
+
+  // background-color: $body-bg;
+  // color: $txt-color;
+  background-color: var(--body-bg) !important;
+  color: var(--txt-color) !important;
+
+  @include mobile {
+    margin-bottom: 3rem;
+  }
+}
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body.hide-scrolling {
+  overflow-y: hidden !important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $pp-font;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: var(--main-color);
+  }
+}
+button,
+input {
+  outline: 0;
+}
+ul {
+  list-style-type: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+iframe {
+  border: 0;
+}
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: #252525;
+  border: 0;
+  opacity: 0.25;
+}
+hr:not([size]) {
+  height: 1px;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.main {
+  overflow: hidden;
+}
+.section {
+  position: relative;
+  padding: 0 2rem;
+
+  @include tablet {
+    padding: 3.75rem 2rem;
+  }
+  @include mobile {
+    padding: 3.75rem 1rem !important;
+  }
+}
+.section__header {
+  @include flex(center, space-between);
+}
+.overlay {
+  @include overlay();
+}
+.slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: var(--nav-bg-color);
+  z-index: 9998;
+  animation: slide 0.5s cubic-bezier(1, -0.01, 0.64, 1.02) forwards;
+}
+/* grid*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-4,
+.col-6,
+.col-8 {
+  padding: 0 15px;
+}
+.col-4 {
+  width: calc(100% / 3);
+}
+.col-6 {
+  width: 50%;
+}
+.col-8 {
+  width: calc((100% / 3) * 2);
+}
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: var(--main-color);
+  background-clip: content-box;
+}
+@keyframes slide {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  99% {
+    top: 99%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  99% {
+    top: 99%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+    display: none;
+  }
+}

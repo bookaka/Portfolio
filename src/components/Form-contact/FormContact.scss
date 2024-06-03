@@ -1,0 +1,49 @@
+@use "../../App.scss" as *;
+
+.contact-form {
+  &__info {
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    &-name,
+    &-email {
+      width: calc(50% - 15px);
+      input {
+        width: 100%;
+      }
+    }
+  }
+  &__subject,
+  &__message {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+
+    input,
+    textarea {
+      flex: 1;
+    }
+    textarea {
+      min-height: 200px;
+    }
+  }
+}
+input,
+textarea {
+  padding: 1rem 2rem;
+  background-color: var(--nav-bg-color);
+  border-radius: $border-radius;
+  border: 1px solid var(--nav-bg-color);
+  color: var(--txt-color);
+  font-size: 15px;
+  outline: none !important;
+  transition: all 0.3s ease;
+  &:focus {
+    border-color: var(--main-color);
+  }
+  &::placeholder {
+    font-family: $pp-font;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
