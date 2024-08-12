@@ -1,7 +1,7 @@
 const infoP = {
-   FisrtName: "Tran",
-   LastName: "Quoc Dinh",
-   Birthday: "11/2002",
+   FisrtName: "Quoc Dinh",
+   LastName: "Tran",
+   Birthday: "07/11/2002",
    Sex: "Male",
    Address: "Ho Chi Minh City",
    Phone: "0357334xxx",

@@ -32,6 +32,11 @@ $pp-font: "Poppins", sans-serif;
     @content;
   }
 }
+@mixin min-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
 @mixin laptop {
   @media screen and (max-width: $laptop-width) and (min-width: $tablet-width) {
     @content;
@@ -59,6 +64,8 @@ body[data-theme="light"] {
   --cursor-color: 149, 200, 92;
   --title-bg: #{$light-title-bg};
   --reverse-color: black;
+  --border-color: #0a0303;
+
 }
 body[data-theme="dark"] {
   --main-color: #ffb400;
@@ -69,6 +76,7 @@ body[data-theme="dark"] {
   --cursor-color: 255, 199, 64;
   --title-bg: #{$dark-title-bg};
   --reverse-color: white;
+  --border-color: #e0e0e0;
 }
 * {
   padding: 0;

@@ -35,7 +35,7 @@ function contact() {
                 </div>
                 <div className="text">
                   <p>Email</p>
-                  {infoP.Email}
+                  <a href={`mailto:${infoP.Email}`}>{infoP.Email}</a>
                 </div>
               </li>
               <li>
@@ -44,7 +44,13 @@ function contact() {
                 </div>
                 <div className="text">
                   <p>Phone</p>
-                  {infoP.Phone}
+                  <a
+                    href={`https://wa.me/+84357334340`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {infoP.Phone}
+                  </a>
                 </div>
               </li>
             </ul>

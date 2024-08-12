@@ -17,15 +17,22 @@ function home() {
           <div className="home__text-wrap">
             <h1>Hello,</h1>
             <h1>My name Tran Quoc Dinh</h1>
-            <h2>I am Web Developer</h2>
+            <h2>I am Freelancer SEO & Developer</h2>
             <p>
-              Hello everyone,My name is Tran Quoc Dinh, and I am currently a
-              fourth-year student at University of Natural Sciences, Ho Chi Minh
-              City, majoring in Information Technology. I have been passionate
-              about computer science since high school, and my goal is to become
-              a web developer.
+              👋 Hi there! I'm Tran Quoc Dinh, your go-to SEO expert and
+              developer, ready to skyrocket your website's visibility. With over
+              a year of hands-on experience, I've tackled a wide range of SEO
+              challenges, from optimizing brand-new sites to troubleshooting
+              technical errors and leveraging powerful scanning tools.
             </p>
-            <p>Thank you for visiting my profile!</p>
+            <p>
+              🚀 My passion lies in helping businesses achieve higher search
+              engine rankings and increased organic traffic. I'm not just an SEO
+              enthusiast; I also bring a strong programming background to the
+              table, ensuring a seamless blend of technical expertise and
+              user-focused design.
+            </p>
+            <p>🎯 Let's work together to unlock your website's full potential. Contact me today for a free consultation!</p>
             <div className="home__button">
               <Button className="home__button-btn">
                 <Link to="/portfolio">
